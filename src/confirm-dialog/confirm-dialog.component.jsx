@@ -1,40 +1,32 @@
-/* eslint-disable react/no-string-refs */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 
-class ConfirmDialog extends React.PureComponent {
-  render() {
-    const modalInstance = (
-      <div id="oc-confirm-dialog" >
-        <Modal show>
-          <Modal.Header>
-            <Modal.Title>{this.props.titleText}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body id="oc-confirm-dialog-body" ref="confirmDialogBody">
-            {this.props.bodyText}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button id="confirm-button" ref="confirmButton" bsStyle="primary" onClick={this.props.confirmCallback}>
-              {this.props.okButtonText}
-            </Button>
-            {this.props.thirdButtonCallback && <Button id="third-button" ref="thirdButton" onClick={this.props.thirdButtonCallback}>
-              {this.props.thirdButtonText}
-            </Button>
-            }
-            <Button id="cancel-button" ref="cancelButton" onClick={this.props.cancelCallback}>
-              {this.props.cancelButtonText}
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
-    );
-    return (
-      <div>
-        {modalInstance}
-      </div>
-    );
-  }
+export default function ConfirmDialog(props) {
+  return (
+    <div id="oc-confirm-dialog" >
+      <Modal show>
+        <Modal.Header>
+          <Modal.Title>{props.titleText}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body id="oc-confirm-dialog-body">
+          {props.bodyText}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button id="confirm-button" bsStyle="primary" onClick={props.confirmCallback}>
+            {props.okButtonText}
+          </Button>
+          {props.thirdButtonCallback && <Button id="third-button" onClick={props.thirdButtonCallback}>
+            {props.thirdButtonText}
+          </Button>
+          }
+          <Button id="cancel-button" onClick={props.cancelCallback}>
+            {props.cancelButtonText}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
 }
 
 ConfirmDialog.propTypes = {
@@ -67,5 +59,3 @@ ConfirmDialog.defaultProps = {
   thirdButtonCallback: undefined,
   thirdButtonText: undefined,
 };
-
-export default ConfirmDialog;
