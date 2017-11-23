@@ -1,8 +1,7 @@
 /* eslint-disable react/no-string-refs */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
-
-require('./confirm-dialog.scss');
 
 class ConfirmDialog extends React.PureComponent {
   render() {
