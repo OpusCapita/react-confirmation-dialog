@@ -3,11 +3,14 @@
 
 import React from 'react';
 import { expect } from 'chai';
-import { mount } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15.4';
 import sinon from 'sinon';
+import { Button } from 'react-bootstrap';
 
 import { ConfirmDialog } from '../../src/confirm-dialog';
 
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('ConfirmDialog component', () => {
   it('should render and function with two buttons', () => {
@@ -20,26 +23,23 @@ describe('ConfirmDialog component', () => {
       cancelButtonText: 'No',
     };
 
-    const wrapper = mount(
+    const wrapper = shallow(
       <ConfirmDialog {...props} />,
     );
 
+    expect(wrapper.find('#oc-confirm-dialog-body').children().text()).to.eql(props.bodyText);
     expect(wrapper.find('#oc-confirm-dialog').length).to.eql(1);
-    // using refs instead of wrapper.find,
-    // because the bootstrap modal is rendered into different tree.
-    expect(wrapper.node.refs.confirmButton).to.not.be.undefined;
-    expect(wrapper.node.refs.cancelButton).to.not.be.undefined;
-    expect(wrapper.node.refs.middleButton).to.be.undefined;
+    expect(wrapper.find(Button)).to.have.length(2);
+    expect(wrapper.find('#confirm-button')).to.not.be.undefined;
+    expect(wrapper.find('#cancel-button')).to.not.be.undefined;
 
-    expect(wrapper.node.refs.confirmDialogBody.props.children).to.eql(props.bodyText);
-
-    wrapper.node.refs.confirmButton.props.onClick();
-    expect(props.confirmCallback.called).to.be.true;
-    wrapper.node.refs.cancelButton.props.onClick();
-    expect(props.cancelCallback.called).to.be.true;
+    wrapper.find('#confirm-button').simulate('click');
+    expect(props.confirmCallback).to.have.property('callCount', 1);
+    wrapper.find('#cancel-button').simulate('click');
+    expect(props.cancelCallback).to.have.property('callCount', 1);
   });
 
-  it('should render and function with three buttons', () => {
+  it('should render function with three buttons', () => {
     const props = {
       titleText: 'Confirmation',
       bodyText: 'Are you certain?',
@@ -51,22 +51,22 @@ describe('ConfirmDialog component', () => {
       thirdButtonText: 'Maybe',
     };
 
-    const wrapper = mount(
+    const wrapper = shallow(
       <ConfirmDialog {...props} />,
     );
 
+    expect(wrapper.find('#oc-confirm-dialog-body').children().text()).to.eql(props.bodyText);
     expect(wrapper.find('#oc-confirm-dialog').length).to.eql(1);
-    expect(wrapper.node.refs.confirmButton).to.not.be.undefined;
-    expect(wrapper.node.refs.cancelButton).to.not.be.undefined;
-    expect(wrapper.node.refs.thirdButton).to.not.be.undefined;
+    expect(wrapper.find(Button)).to.have.length(3);
+    expect(wrapper.find('#confirm-button')).to.not.be.undefined;
+    expect(wrapper.find('#cancel-button')).to.not.be.undefined;
+    expect(wrapper.find('#third-button')).to.not.be.undefined;
 
-    expect(wrapper.node.refs.confirmDialogBody.props.children).to.eql(props.bodyText);
-
-    wrapper.node.refs.confirmButton.props.onClick();
-    expect(props.confirmCallback.called).to.be.true;
-    wrapper.node.refs.cancelButton.props.onClick();
-    expect(props.cancelCallback.called).to.be.true;
-    wrapper.node.refs.thirdButton.props.onClick();
-    expect(props.thirdButtonCallback.called).to.be.true;
+    wrapper.find('#confirm-button').simulate('click');
+    expect(props.confirmCallback).to.have.property('callCount', 1);
+    wrapper.find('#cancel-button').simulate('click');
+    expect(props.cancelCallback).to.have.property('callCount', 1);
+    wrapper.find('#third-button').simulate('click');
+    expect(props.thirdButtonCallback).to.have.property('callCount', 1);
   });
 });
