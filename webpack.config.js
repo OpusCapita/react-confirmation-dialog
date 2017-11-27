@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 const flexbugs = require('postcss-flexbugs-fixes');
 const merge = require('webpack-merge');
 
-const libraryName = 'react-icons';
+const libraryName = 'react-confirmation-dialog';
 const outputJsFile = `${libraryName}.js`;
 
 const getBaseConfiguration = require('./webpack/base.config.js');
