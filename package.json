@@ -23,10 +23,8 @@
   "license": "MIT",
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "15.4.x"
-  },
-  "dependencies": {
-    "react-bootstrap": "0.31.5"
+    "react": "15.4.x",
+    "react-bootstrap": "^0.31.5"
   },
   "devDependencies": {
     "autoprefixer": "6.7.7",
