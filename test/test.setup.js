@@ -1,6 +1,8 @@
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { JSDOM } from 'jsdom';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 
 import mockStorage from './storage.mock';
 
@@ -27,3 +29,5 @@ Object.keys(global.window).forEach((property) => {
 global.navigator = {
   userAgent: 'node.js',
 };
+
+Enzyme.configure({ adapter: new Adapter() });

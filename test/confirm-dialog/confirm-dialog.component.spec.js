@@ -3,14 +3,11 @@
 
 import React from 'react';
 import { expect } from 'chai';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15.4';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { Button } from 'react-bootstrap';
 
 import { ConfirmDialog } from '../../src/confirm-dialog';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('ConfirmDialog component', () => {
   it('should render and function with two buttons', () => {
