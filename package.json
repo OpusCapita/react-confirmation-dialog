@@ -1,7 +1,7 @@
 {
   "author": "OpusCapita (www.opuscapita.com)",
   "name": "@opuscapita/react-confirmation-dialog",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "description": "OpusCapita confirmation dialog",
   "main": "lib/react-confirmation-dialog.js",
