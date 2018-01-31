@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 2.1.0
 * Add `modalClassName` prop to `Modal`
 
 ## 2.0.0
