@@ -5,7 +5,11 @@ import { Modal, Button } from 'react-bootstrap';
 export default function ConfirmDialog(props) {
   return (
     <div id="oc-confirm-dialog" >
-      <Modal show>
+      <Modal
+        dialogClassName={props.modalClassName}
+        enforceFocus={false}
+        show
+      >
         <Modal.Header>
           <Modal.Title>{props.titleText}</Modal.Title>
         </Modal.Header>
@@ -40,7 +44,6 @@ ConfirmDialog.propTypes = {
   ]).isRequired,
   cancelCallback: PropTypes.func.isRequired,
   confirmCallback: PropTypes.func.isRequired,
-  thirdButtonCallback: PropTypes.func,
   okButtonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
@@ -49,6 +52,8 @@ ConfirmDialog.propTypes = {
     PropTypes.string,
     PropTypes.element,
   ]).isRequired,
+  modalClassName: PropTypes.string,
+  thirdButtonCallback: PropTypes.func,
   thirdButtonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
@@ -56,6 +61,7 @@ ConfirmDialog.propTypes = {
 };
 
 ConfirmDialog.defaultProps = {
+  modalClassName: '',
   thirdButtonCallback: undefined,
   thirdButtonText: undefined,
 };
