@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Add `okButtonDisabled` and `thirdButtonDisabled` prop
 
 ## 2.1.0
 * Add `modalClassName` prop to `Modal`
