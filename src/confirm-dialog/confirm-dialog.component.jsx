@@ -17,14 +17,27 @@ export default function ConfirmDialog(props) {
           {props.bodyText}
         </Modal.Body>
         <Modal.Footer>
-          <Button id="confirm-button" bsStyle="primary" onClick={props.confirmCallback}>
+          <Button
+            id="confirm-button"
+            bsStyle="primary"
+            disabled={props.okButtonDisabled}
+            onClick={props.confirmCallback}
+          >
             {props.okButtonText}
           </Button>
-          {props.thirdButtonCallback && <Button id="third-button" onClick={props.thirdButtonCallback}>
-            {props.thirdButtonText}
-          </Button>
+          {props.thirdButtonCallback &&
+            <Button
+              id="third-button"
+              disabled={props.thirdButtonDisabled}
+              onClick={props.thirdButtonCallback}
+            >
+              {props.thirdButtonText}
+            </Button>
           }
-          <Button id="cancel-button" onClick={props.cancelCallback}>
+          <Button
+            id="cancel-button"
+            onClick={props.cancelCallback}
+          >
             {props.cancelButtonText}
           </Button>
         </Modal.Footer>
@@ -53,7 +66,9 @@ ConfirmDialog.propTypes = {
     PropTypes.element,
   ]).isRequired,
   modalClassName: PropTypes.string,
+  okButtonDisabled: PropTypes.bool,
   thirdButtonCallback: PropTypes.func,
+  thirdButtonDisabled: PropTypes.bool,
   thirdButtonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
@@ -62,6 +77,8 @@ ConfirmDialog.propTypes = {
 
 ConfirmDialog.defaultProps = {
   modalClassName: '',
+  okButtonDisabled: false,
   thirdButtonCallback: undefined,
+  thirdButtonDisabled: false,
   thirdButtonText: undefined,
 };
