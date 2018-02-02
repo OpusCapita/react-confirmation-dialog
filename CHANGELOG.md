@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 2.2.0
 * Add `okButtonDisabled` and `thirdButtonDisabled` prop
 
 ## 2.1.0
