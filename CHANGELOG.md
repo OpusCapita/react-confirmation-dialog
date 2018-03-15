@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Add option to color or not each button orange.
 
 ## 2.2.0
 * Add `okButtonDisabled` and `thirdButtonDisabled` prop
