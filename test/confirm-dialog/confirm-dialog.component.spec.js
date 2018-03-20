@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 import { Button } from 'react-bootstrap';
 
@@ -65,5 +65,35 @@ describe('ConfirmDialog component', () => {
     expect(props.cancelCallback).to.have.property('callCount', 1);
     wrapper.find('#third-button').simulate('click');
     expect(props.thirdButtonCallback).to.have.property('callCount', 1);
+  });
+
+  it('should render function with three buttons, only the last two should be orange', () => {
+    const props = {
+      titleText: 'Confirmation',
+      bodyText: 'Are you certain?',
+      confirmCallback: sinon.spy(),
+      cancelCallback: sinon.spy(),
+      thirdButtonCallback: sinon.spy(),
+      okButtonText: 'Yes',
+      cancelButtonText: 'No',
+      thirdButtonText: 'Maybe',
+      paintConfirmButtonOrange: false,
+      paintThirdButtonOrange: true,
+      paintCancelButtonOrange: true,
+    };
+
+    const wrapper = mount(
+      <ConfirmDialog {...props} />,
+    );
+
+    const confirmButton = document.getElementById('confirm-button');
+    const thirdButton = document.getElementById('third-button');
+    const cancelButton = document.getElementById('cancel-button');
+
+    expect(confirmButton.classList.contains('btn-default')).to.equal(true);
+    expect(thirdButton.classList.contains('btn-primary')).to.equal(true);
+    expect(cancelButton.classList.contains('btn-primary')).to.equal(true);
+
+    wrapper.unmount();
   });
 });
