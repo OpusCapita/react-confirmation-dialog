@@ -4,6 +4,9 @@
 
 ## next
 
+## 2.4.0
+* confirmCallback, cancelCallback, cancelButtonText and okButtonText are no longer required props.
+
 ## 2.3.0
 * Add option to color or not each button orange.
 

@@ -20,11 +20,11 @@ Name | Type | Default | Description
 --- | --- | --- | ---
 titleText | [element, string] | required | Title to be displayed on top of dialog
 bodyText | [element, string] | required | Dialog message to be displayed
-cancelCallback | function | required | Callback to function executed on cancel button click
-confirmCallback | function | required | Callback to function executed on confirm button click
-okButtonText | [element, string] | required | Text to be displayed on the confirm button
+cancelCallback | function | undefined | Callback to function executed on cancel button click
+confirmCallback | function | undefined | Callback to function executed on confirm button click
+okButtonText | [element, string] | undefined | Text to be displayed on the confirm button
 okButtonDisabled | bool | false | Disabled status of the confirm button
-cancelButtonText | [element, string] | required | Text to be displayed on the cancel button
+cancelButtonText | [element, string] | undefined | Text to be displayed on the cancel button
 modalClassName | string | '' | Optional class name for Modal
 thirdButtonCallback | function | undefined | Callback to function executed on middle button click
 thirdButtonDisabled | bool | false | Disabled status of the middle button
