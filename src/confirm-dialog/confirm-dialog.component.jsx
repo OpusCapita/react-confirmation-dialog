@@ -37,13 +37,13 @@ export default function ConfirmDialog(props) {
               {props.thirdButtonText}
             </Button>
           }
-          <Button
+          {props.cancelCallback && <Button
             id="cancel-button"
             bsStyle={props.paintCancelButtonOrange ? 'primary' : 'default'}
             onClick={props.cancelCallback}
           >
             {props.cancelButtonText}
-          </Button>
+          </Button>}
         </Modal.Footer>
       </Modal>
     </div>
@@ -59,16 +59,16 @@ ConfirmDialog.propTypes = {
     PropTypes.string,
     PropTypes.element,
   ]).isRequired,
-  cancelCallback: PropTypes.func.isRequired,
-  confirmCallback: PropTypes.func.isRequired,
+  cancelCallback: PropTypes.func,
+  confirmCallback: PropTypes.func,
   okButtonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
-  ]).isRequired,
+  ]),
   cancelButtonText: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
-  ]).isRequired,
+  ]),
   modalClassName: PropTypes.string,
   okButtonDisabled: PropTypes.bool,
   thirdButtonCallback: PropTypes.func,
@@ -91,4 +91,8 @@ ConfirmDialog.defaultProps = {
   paintConfirmButtonOrange: true,
   paintCancelButtonOrange: false,
   paintThirdButtonOrange: false,
+  cancelCallback: undefined,
+  confirmCallback: undefined,
+  okButtonText: undefined,
+  cancelButtonText: undefined,
 };
