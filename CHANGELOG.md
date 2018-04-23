@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* changed ids of the three buttons because they cause ambiguity issues with react-wizard buttons in autotests 
 
 ## 2.4.0
 * confirmCallback, cancelCallback, cancelButtonText and okButtonText are no longer required props.

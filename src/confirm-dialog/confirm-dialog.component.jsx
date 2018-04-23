@@ -19,7 +19,7 @@ export default function ConfirmDialog(props) {
         <Modal.Footer>
           {props.confirmCallback &&
             <Button
-              id="confirm-button"
+              id="dialog-confirm-button"
               bsStyle={props.paintConfirmButtonOrange ? 'primary' : 'default'}
               disabled={props.okButtonDisabled}
               onClick={props.confirmCallback}
@@ -29,7 +29,7 @@ export default function ConfirmDialog(props) {
           }
           {props.thirdButtonCallback &&
             <Button
-              id="third-button"
+              id="dialog-third-button"
               bsStyle={props.paintThirdButtonOrange ? 'primary' : 'default'}
               disabled={props.thirdButtonDisabled}
               onClick={props.thirdButtonCallback}
@@ -38,7 +38,7 @@ export default function ConfirmDialog(props) {
             </Button>
           }
           {props.cancelCallback && <Button
-            id="cancel-button"
+            id="dialog-cancel-button"
             bsStyle={props.paintCancelButtonOrange ? 'primary' : 'default'}
             onClick={props.cancelCallback}
           >

@@ -27,12 +27,12 @@ describe('ConfirmDialog component', () => {
     expect(wrapper.find('#oc-confirm-dialog-body').children().text()).to.eql(props.bodyText);
     expect(wrapper.find('#oc-confirm-dialog').length).to.eql(1);
     expect(wrapper.find(Button)).to.have.length(2);
-    expect(wrapper.find('#confirm-button')).to.not.be.undefined;
-    expect(wrapper.find('#cancel-button')).to.not.be.undefined;
+    expect(wrapper.find('#dialog-confirm-button')).to.not.be.undefined;
+    expect(wrapper.find('#dialog-cancel-button')).to.not.be.undefined;
 
-    wrapper.find('#confirm-button').simulate('click');
+    wrapper.find('#dialog-confirm-button').simulate('click');
     expect(props.confirmCallback).to.have.property('callCount', 1);
-    wrapper.find('#cancel-button').simulate('click');
+    wrapper.find('#dialog-cancel-button').simulate('click');
     expect(props.cancelCallback).to.have.property('callCount', 1);
   });
 
@@ -55,15 +55,15 @@ describe('ConfirmDialog component', () => {
     expect(wrapper.find('#oc-confirm-dialog-body').children().text()).to.eql(props.bodyText);
     expect(wrapper.find('#oc-confirm-dialog').length).to.eql(1);
     expect(wrapper.find(Button)).to.have.length(3);
-    expect(wrapper.find('#confirm-button')).to.not.be.undefined;
-    expect(wrapper.find('#cancel-button')).to.not.be.undefined;
-    expect(wrapper.find('#third-button')).to.not.be.undefined;
+    expect(wrapper.find('#dialog-confirm-button')).to.not.be.undefined;
+    expect(wrapper.find('#dialog-cancel-button')).to.not.be.undefined;
+    expect(wrapper.find('#dialog-third-button')).to.not.be.undefined;
 
-    wrapper.find('#confirm-button').simulate('click');
+    wrapper.find('#dialog-confirm-button').simulate('click');
     expect(props.confirmCallback).to.have.property('callCount', 1);
-    wrapper.find('#cancel-button').simulate('click');
+    wrapper.find('#dialog-cancel-button').simulate('click');
     expect(props.cancelCallback).to.have.property('callCount', 1);
-    wrapper.find('#third-button').simulate('click');
+    wrapper.find('#dialog-third-button').simulate('click');
     expect(props.thirdButtonCallback).to.have.property('callCount', 1);
   });
 
@@ -86,9 +86,9 @@ describe('ConfirmDialog component', () => {
       <ConfirmDialog {...props} />,
     );
 
-    const confirmButton = document.getElementById('confirm-button');
-    const thirdButton = document.getElementById('third-button');
-    const cancelButton = document.getElementById('cancel-button');
+    const confirmButton = document.getElementById('dialog-confirm-button');
+    const thirdButton = document.getElementById('dialog-third-button');
+    const cancelButton = document.getElementById('dialog-cancel-button');
 
     expect(confirmButton.classList.contains('btn-default')).to.equal(true);
     expect(thirdButton.classList.contains('btn-primary')).to.equal(true);
