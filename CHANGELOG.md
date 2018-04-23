@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 2.4.1
 * changed ids of the three buttons because they cause ambiguity issues with react-wizard buttons in autotests 
 
 ## 2.4.0
