@@ -1,52 +1,65 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { Primitive, theme } from '@opuscapita/oc-cm-common-layouts';
+import { ThemeProvider } from 'styled-components';
+
+const Button = Primitive.Button.extend`
+  margin-left: ${theme.gutterWidth};
+`;
+Button.displayName = 'Button';
+
+const Footer = Primitive.Block.extend`
+  text-align: right;
+`;
 
 export default function ConfirmDialog(props) {
   return (
-    <div id="oc-confirm-dialog" >
-      <Modal
-        dialogClassName={props.modalClassName}
-        enforceFocus={false}
-        show
-      >
-        <Modal.Header>
-          <Modal.Title>{props.titleText}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body id="oc-confirm-dialog-body">
-          {props.bodyText}
-        </Modal.Body>
-        <Modal.Footer>
-          {props.confirmCallback &&
-            <Button
-              id="dialog-confirm-button"
-              bsStyle={props.paintConfirmButtonOrange ? 'primary' : 'default'}
-              disabled={props.okButtonDisabled}
-              onClick={props.confirmCallback}
+    <ThemeProvider theme={theme}>
+      <div id="oc-confirm-dialog" >
+        <Modal
+          dialogClassName={props.modalClassName}
+          enforceFocus={false}
+          show
+        >
+          <Primitive.Block>
+            <Primitive.Subtitle>{props.titleText}</Primitive.Subtitle>
+          </Primitive.Block>
+          <Primitive.Block id="oc-confirm-dialog-body">
+            {props.bodyText}
+          </Primitive.Block>
+          <Footer>
+            {props.confirmCallback &&
+              <Button
+                id="dialog-confirm-button"
+                primary={props.paintConfirmButtonOrange}
+                disabled={props.okButtonDisabled}
+                onClick={props.confirmCallback}
+              >
+                {props.okButtonText}
+              </Button>
+            }
+            {props.thirdButtonCallback &&
+              <Button
+                id="dialog-third-button"
+                primary={props.paintThirdButtonOrange}
+                disabled={props.thirdButtonDisabled}
+                onClick={props.thirdButtonCallback}
+              >
+                {props.thirdButtonText}
+              </Button>
+            }
+            {props.cancelCallback && <Button
+              id="dialog-cancel-button"
+              primary={props.paintCancelButtonOrange}
+              onClick={props.cancelCallback}
             >
-              {props.okButtonText}
-            </Button>
-          }
-          {props.thirdButtonCallback &&
-            <Button
-              id="dialog-third-button"
-              bsStyle={props.paintThirdButtonOrange ? 'primary' : 'default'}
-              disabled={props.thirdButtonDisabled}
-              onClick={props.thirdButtonCallback}
-            >
-              {props.thirdButtonText}
-            </Button>
-          }
-          {props.cancelCallback && <Button
-            id="dialog-cancel-button"
-            bsStyle={props.paintCancelButtonOrange ? 'primary' : 'default'}
-            onClick={props.cancelCallback}
-          >
-            {props.cancelButtonText}
-          </Button>}
-        </Modal.Footer>
-      </Modal>
-    </div>
+              {props.cancelButtonText}
+            </Button>}
+          </Footer>
+        </Modal>
+      </div>
+    </ThemeProvider>
   );
 }
 
