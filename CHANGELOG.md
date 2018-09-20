@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 2.5.0
 * Removed vertical lines
 * Added min-width for button
 * Used @opuscapita/oc-cm-common-layouts
