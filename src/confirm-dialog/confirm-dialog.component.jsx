@@ -34,7 +34,7 @@ export default function ConfirmDialog(props) {
           show
         >
           <Header>
-            <Primitive.Subtitle>{props.titleText}</Primitive.Subtitle>
+            <Primitive.Title>{props.titleText}</Primitive.Title>
           </Header>
           <Body id="oc-confirm-dialog-body">
             {props.bodyText}
