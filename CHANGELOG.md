@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 2.5.1
 * Finetuned paddings
 
 ## 2.5.0
