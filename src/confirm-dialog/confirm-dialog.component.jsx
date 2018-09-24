@@ -2,15 +2,26 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { Primitive, theme } from '@opuscapita/oc-cm-common-layouts';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 const Button = Primitive.Button.extend`
   margin-left: ${theme.gutterWidth};
 `;
 Button.displayName = 'Button';
 
-const Footer = Primitive.Block.extend`
+const doubleGutterWidth = `calc(2 * ${theme.gutterWidth})`;
+
+const Header = styled.div`
+  padding: ${doubleGutterWidth} ${doubleGutterWidth} ${theme.gutterWidth} ${doubleGutterWidth};
+`;
+
+const Body = styled.div`
+  padding: ${theme.gutterWidth} ${doubleGutterWidth};
+`;
+
+const Footer = styled.div`
   text-align: right;
+  padding: ${theme.gutterWidth} ${doubleGutterWidth} ${doubleGutterWidth} ${doubleGutterWidth};
 `;
 
 export default function ConfirmDialog(props) {
@@ -22,12 +33,12 @@ export default function ConfirmDialog(props) {
           enforceFocus={false}
           show
         >
-          <Primitive.Block>
+          <Header>
             <Primitive.Subtitle>{props.titleText}</Primitive.Subtitle>
-          </Primitive.Block>
-          <Primitive.Block id="oc-confirm-dialog-body">
+          </Header>
+          <Body id="oc-confirm-dialog-body">
             {props.bodyText}
-          </Primitive.Block>
+          </Body>
           <Footer>
             {props.confirmCallback &&
               <Button
