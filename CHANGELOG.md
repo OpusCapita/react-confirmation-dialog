@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Finetuned paddings
 
 ## 2.5.0
 * Removed vertical lines
