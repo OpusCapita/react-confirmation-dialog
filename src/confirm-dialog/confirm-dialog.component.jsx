@@ -32,6 +32,7 @@ export default function ConfirmDialog(props) {
           dialogClassName={props.modalClassName}
           enforceFocus={false}
           show
+          style={{ display: 'flex', 'align-items': 'center' }}
         >
           <Header>
             <Primitive.Title>{props.titleText}</Primitive.Title>
