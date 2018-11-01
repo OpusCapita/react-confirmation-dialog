@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Changed dialog's vertical alignment center (instead of margin-top 30px)
 
 ## 2.5.1
 * Finetuned paddings
@@ -13,7 +14,7 @@
 * Used @opuscapita/oc-cm-common-layouts
 
 ## 2.4.1
-* changed ids of the three buttons because they cause ambiguity issues with react-wizard buttons in autotests 
+* changed ids of the three buttons because they cause ambiguity issues with react-wizard buttons in autotests
 
 ## 2.4.0
 * confirmCallback, cancelCallback, cancelButtonText and okButtonText are no longer required props.
