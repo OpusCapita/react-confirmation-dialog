@@ -3,7 +3,6 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
-* Changed dialog's vertical alignment center (instead of margin-top 30px)
 
 ## 2.5.2
 * Changed dialog's vertical alignment center (instead of margin-top 30px)
