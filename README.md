@@ -28,7 +28,7 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | cancelCallback           | function          |                 | Callback to function executed on cancel button click  |
 | confirmCallback          | function          |                 | Callback to function executed on confirm button click |
 | okButtonDisabled         | bool              | false           | Disabled status of the confirm button                 |
-| modalClassName           | string            | ''              | Optional class name for Modal                         |
+| className                | string            | ''              | Optional class name for Modal                         |
 | thirdButtonCallback      | function          | undefined       | Callback to function executed on middle button click  |
 | thirdButtonDisabled      | bool              | false           | Disabled status of the middle button                  |
 | paintConfirmButtonOrange | bool              | true            | Determines whether confirm button should be orange    |
