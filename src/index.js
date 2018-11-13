@@ -1,1 +1,3 @@
-export * from './confirm-dialog/index.js';
+import ConfirmDialog from './confirm-dialog.component';
+
+export default ConfirmDialog;

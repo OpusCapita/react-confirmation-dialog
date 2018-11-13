@@ -4,6 +4,15 @@
 
 ## next
 
+## 3.0.0
+* Upgrade to new react component layout
+* Upgrade packages
+* All translation text props moved to `translations` object prop
+* Added `id` and `className` prop
+* Removed `dialogClassName` prop
+* HTML id's changed a bit
+* Updated examples + unit tests
+
 ## 2.5.2
 * Changed dialog's vertical alignment center (instead of margin-top 30px)
 
