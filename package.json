@@ -1,7 +1,7 @@
 {
   "author": "OpusCapita (www.opuscapita.com)",
   "name": "@opuscapita/react-confirmation-dialog",
-  "version": "2.5.2",
+  "version": "3.0.0",
   "private": false,
   "license": "MIT",
   "description": "React confirmation dialog",
