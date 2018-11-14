@@ -5,7 +5,7 @@
   "private": false,
   "license": "MIT",
   "description": "React confirmation dialog",
-  "main": "lib/umd/react-searchbar.js",
+  "main": "lib/umd/react-confirmation-dialog.js",
   "cjs": "lib/cjs/index.js",
   "es": "lib/es/index.js",
   "scripts": {

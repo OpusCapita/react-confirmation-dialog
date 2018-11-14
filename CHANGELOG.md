@@ -4,6 +4,9 @@
 
 ## next
 
+## 3.0.1
+* Fix package.json main link
+
 ## 3.0.0
 * Upgrade to new react component layout
 * Upgrade packages
