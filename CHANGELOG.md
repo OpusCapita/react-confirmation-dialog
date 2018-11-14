@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* README.md updated (localizationTexts -> translations)
 
 ## 3.0.1
 * Fix package.json main link

@@ -24,7 +24,7 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | Prop name                | Type              | Default         | Description                                           |
 | ------------------------ | ----------------- | ----------------| ----------------------------------------------------- |
 | id                       | string            | oc-confirm-dialog | String prefix for the HTML ID's                     |
-| localizationTexts        | object of [string, element] | { ok: 'OK', cancel: 'Cancel', thirdButton: '', title: 'Title', body: 'Body' } | Translation texts |
+| translations             | object of [string, element] | { ok: 'OK', cancel: 'Cancel', thirdButton: '', title: 'Title', body: 'Body' } | Translation texts |
 | cancelCallback           | function          |                 | Callback to function executed on cancel button click  |
 | confirmCallback          | function          |                 | Callback to function executed on confirm button click |
 | okButtonDisabled         | bool              | false           | Disabled status of the confirm button                 |
