@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Added class for modal body
 * README.md updated (localizationTexts -> translations)
 
 ## 3.0.1
