@@ -53,7 +53,7 @@ export default class ConfirmDialog extends React.PureComponent {
               {translations.title}
             </Primitive.Title>
           </Header>
-          <Body id={`${id}-body`}>
+          <Body id={`${id}-body`} className="modal-body">
             {translations.body}
           </Body>
           <Footer>
