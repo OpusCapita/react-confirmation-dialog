@@ -20,8 +20,16 @@ const Body = styled.div`
 `;
 
 const Footer = styled.div`
-  text-align: right;
   padding: ${theme.gutterWidth} ${doubleGutterWidth} ${doubleGutterWidth} ${doubleGutterWidth};
+  display:flex;
+  justify-content: flex-end;
+`;
+
+const ButtonContainer = styled.div`
+
+`;
+const FooterContent = styled.div`
+  flex: 1;
 `;
 
 export default class ConfirmDialog extends React.PureComponent {
@@ -38,7 +46,9 @@ export default class ConfirmDialog extends React.PureComponent {
       thirdButtonDisabled,
       cancelCallback,
       paintCancelButtonOrange,
+      footerContent,
     } = this.props;
+
     return (
       <ThemeProvider theme={theme}>
         <Modal
@@ -46,7 +56,10 @@ export default class ConfirmDialog extends React.PureComponent {
           dialogClassName={className}
           enforceFocus={false}
           show
-          style={{ display: 'flex', alignItems: 'center' }}
+          style={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
         >
           <Header>
             <Primitive.Title id={`${id}-title`}>
@@ -54,10 +67,12 @@ export default class ConfirmDialog extends React.PureComponent {
             </Primitive.Title>
           </Header>
           <Body id={`${id}-body`} className="modal-body">
-            {translations.body}
+          {translations.body}
           </Body>
           <Footer>
-            {confirmCallback &&
+            {footerContent && <FooterContent>{footerContent}</FooterContent>}
+            <ButtonContainer>
+              {confirmCallback &&
               <Button
                 id={`${id}-confirm-button`}
                 primary={paintConfirmButtonOrange}
@@ -66,8 +81,8 @@ export default class ConfirmDialog extends React.PureComponent {
               >
                 {translations.ok}
               </Button>
-            }
-            {thirdButtonCallback &&
+              }
+              {thirdButtonCallback &&
               <Button
                 id={`${id}-third-button`}
                 primary={paintThirdButtonOrange}
@@ -76,8 +91,8 @@ export default class ConfirmDialog extends React.PureComponent {
               >
                 {translations.thirdButton}
               </Button>
-            }
-            {cancelCallback &&
+              }
+              {cancelCallback &&
               <Button
                 id={`${id}-cancel-button`}
                 primary={paintCancelButtonOrange}
@@ -85,6 +100,7 @@ export default class ConfirmDialog extends React.PureComponent {
               >
                 {translations.cancel}
               </Button>}
+            </ButtonContainer>
           </Footer>
         </Modal>
       </ThemeProvider>
@@ -110,6 +126,7 @@ ConfirmDialog.propTypes = {
   paintConfirmButtonOrange: PropTypes.bool,
   paintCancelButtonOrange: PropTypes.bool,
   paintThirdButtonOrange: PropTypes.bool,
+  footerContent: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 ConfirmDialog.defaultProps = {
@@ -130,4 +147,5 @@ ConfirmDialog.defaultProps = {
   paintThirdButtonOrange: false,
   cancelCallback: undefined,
   confirmCallback: undefined,
+  footerContent: undefined,
 };
