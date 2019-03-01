@@ -25,9 +25,6 @@ const Footer = styled.div`
   justify-content: flex-end;
 `;
 
-const ButtonContainer = styled.div`
-
-`;
 const FooterContent = styled.div`
   flex: 1;
 `;
@@ -48,7 +45,6 @@ export default class ConfirmDialog extends React.PureComponent {
       paintCancelButtonOrange,
       footerContent,
     } = this.props;
-
     return (
       <ThemeProvider theme={theme}>
         <Modal
@@ -56,10 +52,7 @@ export default class ConfirmDialog extends React.PureComponent {
           dialogClassName={className}
           enforceFocus={false}
           show
-          style={{
-            display: 'flex',
-            alignItems: 'center'
-          }}
+          style={{ display: 'flex', alignItems: 'center' }}
         >
           <Header>
             <Primitive.Title id={`${id}-title`}>
@@ -67,11 +60,11 @@ export default class ConfirmDialog extends React.PureComponent {
             </Primitive.Title>
           </Header>
           <Body id={`${id}-body`} className="modal-body">
-          {translations.body}
+            {translations.body}
           </Body>
           <Footer>
             {footerContent && <FooterContent>{footerContent}</FooterContent>}
-            <ButtonContainer>
+            <div>
               {confirmCallback &&
               <Button
                 id={`${id}-confirm-button`}
@@ -100,7 +93,7 @@ export default class ConfirmDialog extends React.PureComponent {
               >
                 {translations.cancel}
               </Button>}
-            </ButtonContainer>
+            </div>
           </Footer>
         </Modal>
       </ThemeProvider>
