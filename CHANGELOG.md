@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* `footerContent` prop
 
 ## 3.0.2
 * Added class for modal body

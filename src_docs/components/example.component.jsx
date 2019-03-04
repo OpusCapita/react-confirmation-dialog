@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import styled from 'styled-components';
 import ConfirmDialog from '../../src/index';
 
 const firstDialogTranslations = {
@@ -15,6 +16,15 @@ const secondDialogTranslations = {
   thirdButton: 'Open previous dialog',
   cancel: 'Cancel',
 };
+
+const FooterContent = styled.div`
+  background: #f0f0f0;
+  height: 100%;
+  display:flex; 
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 0 1rem;
+`;
 
 export default class ComponentView extends React.PureComponent {
   constructor(props) {
@@ -32,7 +42,7 @@ export default class ComponentView extends React.PureComponent {
       cancelCallback={this.hideDialogs}
       confirmCallback={this.switchDialogs}
     />
-  )
+  );
 
   getSecondDialog = () => (
     <ConfirmDialog
@@ -42,35 +52,36 @@ export default class ComponentView extends React.PureComponent {
       cancelCallback={this.hideDialogs}
       thirdButtonCallback={this.switchDialogs}
       paintCancelButtonOrange
+      footerContent={<FooterContent>Some extra content via footerContent prop</FooterContent>}
     />
-  )
+  );
 
   switchDialogs = () => {
     this.setState({
       showFirst: this.state.showSecond,
       showSecond: this.state.showFirst,
     });
-  }
+  };
 
   hideDialogs = () => {
     this.setState({
       showFirst: false,
       showSecond: false,
     });
-  }
+  };
 
   showDialog = () => {
     this.setState({
       showFirst: true,
       showSecond: false,
     });
-  }
+  };
 
   render() {
     return (
       <div style={{ padding: '20px' }}>
-        { this.state.showFirst && this.getFirstDialog() }
-        { this.state.showSecond && this.getSecondDialog() }
+        {this.state.showFirst && this.getFirstDialog()}
+        {this.state.showSecond && this.getSecondDialog()}
         <Button onClick={this.showDialog}>Show dialog</Button>
       </div>
     );

@@ -34,6 +34,7 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | paintConfirmButtonOrange | bool              | true            | Determines whether confirm button should be orange    |
 | paintThirdButtonOrange   | bool              | false           | Determines whether middle button should be orange     |
 | paintCancelButtonOrange  | bool              | false           | Determines whether cancel button should be orange     |
+| footerContent            | string, node      | undefined       | Content displayed on the left side of the footer      |
 
 ### Code example
 ```jsx
