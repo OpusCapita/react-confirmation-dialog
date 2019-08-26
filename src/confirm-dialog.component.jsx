@@ -16,12 +16,16 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: ${theme.gutterWidth} ${doubleGutterWidth};
+  && {
+    padding: ${theme.gutterWidth} ${doubleGutterWidth};
+  }
 `;
 
 const Footer = styled.div`
-  padding: ${theme.gutterWidth} ${doubleGutterWidth} ${doubleGutterWidth} ${doubleGutterWidth};
-  display:flex;
+  padding: ${props => (props.isFooterEmpty
+    ? `${theme.gutterWidth} 0 0`
+    : `${theme.gutterWidth} ${doubleGutterWidth} ${doubleGutterWidth} ${doubleGutterWidth}`)};
+  display: flex;
   justify-content: flex-end;
 `;
 
@@ -45,6 +49,8 @@ export default class ConfirmDialog extends React.PureComponent {
       paintCancelButtonOrange,
       footerContent,
     } = this.props;
+    const isFooterEmpty =
+      !footerContent && !confirmCallback && !thirdButtonCallback && !cancelCallback;
     return (
       <ThemeProvider theme={theme}>
         <Modal
@@ -62,7 +68,7 @@ export default class ConfirmDialog extends React.PureComponent {
           <Body id={`${id}-body`} className="modal-body">
             {translations.body}
           </Body>
-          <Footer>
+          <Footer isFooterEmpty={isFooterEmpty}>
             {footerContent && <FooterContent>{footerContent}</FooterContent>}
             <div>
               {confirmCallback &&
