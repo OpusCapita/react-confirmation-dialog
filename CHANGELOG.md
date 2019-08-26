@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+
+## 3.1.1
 * Fixed content padding-left/right and empty footer padding
 * Added Storybook support
 
