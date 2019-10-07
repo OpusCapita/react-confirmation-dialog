@@ -106,7 +106,7 @@
     "write-file-webpack-plugin": "4.4.1"
   },
   "dependencies": {
-    "@opuscapita/oc-cm-common-layouts": "2.5.2",
+    "@opuscapita/oc-cm-common-layouts": "3.3.0",
     "styled-components": "4.1.1"
   },
   "repository": {

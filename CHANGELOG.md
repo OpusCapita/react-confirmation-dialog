@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Upgraded `@opuscapita/oc-cm-common-layouts` version
 
 ## 3.1.1
 * Fixed content padding-left/right and empty footer padding
