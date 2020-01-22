@@ -22,7 +22,7 @@ const Body = styled.div`
 `;
 
 const Footer = styled.div`
-  padding: ${props => (props.isFooterEmpty
+  padding: ${(props) => (props.isFooterEmpty
     ? `${theme.gutterWidth} 0 0`
     : `${theme.gutterWidth} ${doubleGutterWidth} ${doubleGutterWidth} ${doubleGutterWidth}`)};
   display: flex;
@@ -49,8 +49,10 @@ export default class ConfirmDialog extends React.PureComponent {
       paintCancelButtonOrange,
       footerContent,
     } = this.props;
-    const isFooterEmpty =
-      !footerContent && !confirmCallback && !thirdButtonCallback && !cancelCallback;
+    const isFooterEmpty = !footerContent
+      && !confirmCallback
+      && !thirdButtonCallback
+      && !cancelCallback;
     return (
       <ThemeProvider theme={theme}>
         <Modal
@@ -71,34 +73,35 @@ export default class ConfirmDialog extends React.PureComponent {
           <Footer isFooterEmpty={isFooterEmpty}>
             {footerContent && <FooterContent>{footerContent}</FooterContent>}
             <div>
-              {confirmCallback &&
-              <Button
-                id={`${id}-confirm-button`}
-                primary={paintConfirmButtonOrange}
-                disabled={okButtonDisabled}
-                onClick={confirmCallback}
-              >
-                {translations.ok}
-              </Button>
-              }
-              {thirdButtonCallback &&
-              <Button
-                id={`${id}-third-button`}
-                primary={paintThirdButtonOrange}
-                disabled={thirdButtonDisabled}
-                onClick={thirdButtonCallback}
-              >
-                {translations.thirdButton}
-              </Button>
-              }
-              {cancelCallback &&
-              <Button
-                id={`${id}-cancel-button`}
-                primary={paintCancelButtonOrange}
-                onClick={cancelCallback}
-              >
-                {translations.cancel}
-              </Button>}
+              {confirmCallback && (
+                <Button
+                  id={`${id}-confirm-button`}
+                  primary={paintConfirmButtonOrange}
+                  disabled={okButtonDisabled}
+                  onClick={confirmCallback}
+                >
+                  {translations.ok}
+                </Button>
+              )}
+              {thirdButtonCallback && (
+                <Button
+                  id={`${id}-third-button`}
+                  primary={paintThirdButtonOrange}
+                  disabled={thirdButtonDisabled}
+                  onClick={thirdButtonCallback}
+                >
+                  {translations.thirdButton}
+                </Button>
+              )}
+              {cancelCallback && (
+                <Button
+                  id={`${id}-cancel-button`}
+                  primary={paintCancelButtonOrange}
+                  onClick={cancelCallback}
+                >
+                  {translations.cancel}
+                </Button>
+              )}
             </div>
           </Footer>
         </Modal>

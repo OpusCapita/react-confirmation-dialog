@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-unused-expressions */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
@@ -8,7 +9,6 @@ import sinon from 'sinon';
 import ConfirmDialog from '../../src/index';
 
 describe('ConfirmDialog component', () => {
-
   const translations = {
     title: 'Confirmation',
     body: 'Are you certain?',

@@ -3,6 +3,10 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+## 3.1.3
+* Upgraded latest `@opuscapita/oc-cm-common-layouts` version
+* `styled-components` as peerDependency
+* Upgrade all packages (react 16.8.6, webpack 4, babel 7)
 
 ## 3.1.2
 * Upgraded `@opuscapita/oc-cm-common-layouts` version

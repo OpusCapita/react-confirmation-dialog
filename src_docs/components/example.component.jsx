@@ -57,10 +57,10 @@ export default class ComponentView extends React.PureComponent {
   );
 
   switchDialogs = () => {
-    this.setState({
-      showFirst: this.state.showSecond,
-      showSecond: this.state.showFirst,
-    });
+    this.setState((prevState) => ({
+      showFirst: prevState.showSecond,
+      showSecond: prevState.showFirst,
+    }));
   };
 
   hideDialogs = () => {
@@ -78,10 +78,14 @@ export default class ComponentView extends React.PureComponent {
   };
 
   render() {
+    const {
+      showFirst,
+      showSecond,
+    } = this.state;
     return (
       <div style={{ padding: '20px' }}>
-        {this.state.showFirst && this.getFirstDialog()}
-        {this.state.showSecond && this.getSecondDialog()}
+        {showFirst && this.getFirstDialog()}
+        {showSecond && this.getSecondDialog()}
         <Button onClick={this.showDialog}>Show dialog</Button>
       </div>
     );
