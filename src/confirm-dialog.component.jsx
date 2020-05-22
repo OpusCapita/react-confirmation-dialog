@@ -57,6 +57,7 @@ export default class ConfirmDialog extends React.PureComponent {
     return (
       <ThemeProvider theme={theme}>
         <Modal
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...modalProps}
           id={id}
           dialogClassName={className}
