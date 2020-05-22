@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## next
+* Added `modalProps` property to enable to change Bootstrap properties
+
 ## 3.1.3
 * Upgraded latest `@opuscapita/oc-cm-common-layouts` version
 * `styled-components` as peerDependency

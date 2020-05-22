@@ -20,7 +20,7 @@ const secondDialogTranslations = {
 const FooterContent = styled.div`
   background: #f0f0f0;
   height: 100%;
-  display:flex; 
+  display: flex;
   align-items: center;
   border: 1px solid #ddd;
   padding: 0 1rem;

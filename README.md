@@ -21,20 +21,21 @@ Also you need to configure sass loader, since all the styles are in sass format.
 * Add [SASS loader](https://github.com/webpack-contrib/sass-loader) to support importing of SASS styles.
 
 ### API
-| Prop name                | Type              | Default         | Description                                           |
-| ------------------------ | ----------------- | ----------------| ----------------------------------------------------- |
-| id                       | string            | oc-confirm-dialog | String prefix for the HTML ID's                     |
-| translations             | object of [string, element] | { ok: 'OK', cancel: 'Cancel', thirdButton: '', title: 'Title', body: 'Body' } | Translation texts |
-| cancelCallback           | function          |                 | Callback to function executed on cancel button click  |
-| confirmCallback          | function          |                 | Callback to function executed on confirm button click |
-| okButtonDisabled         | bool              | false           | Disabled status of the confirm button                 |
-| className                | string            | ''              | Optional class name for Modal                         |
-| thirdButtonCallback      | function          | undefined       | Callback to function executed on middle button click  |
-| thirdButtonDisabled      | bool              | false           | Disabled status of the middle button                  |
-| paintConfirmButtonOrange | bool              | true            | Determines whether confirm button should be orange    |
-| paintThirdButtonOrange   | bool              | false           | Determines whether middle button should be orange     |
-| paintCancelButtonOrange  | bool              | false           | Determines whether cancel button should be orange     |
-| footerContent            | string, node      | undefined       | Content displayed on the left side of the footer      |
+| Prop name                | Type                        | Default                                                                       | Description                                                                               |
+| ------------------------ | --------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| id                       | string                      | oc-confirm-dialog                                                             | String prefix for the HTML ID's                                                           |
+| translations             | object of [string, element] | { ok: 'OK', cancel: 'Cancel', thirdButton: '', title: 'Title', body: 'Body' } | Translation texts                                                                         |
+| cancelCallback           | function                    |                                                                               | Callback to function executed on cancel button click                                      |
+| confirmCallback          | function                    |                                                                               | Callback to function executed on confirm button click                                     |
+| okButtonDisabled         | bool                        | false                                                                         | Disabled status of the confirm button                                                     |
+| className                | string                      | ''                                                                            | Optional class name for Modal                                                             |
+| thirdButtonCallback      | function                    | undefined                                                                     | Callback to function executed on middle button click                                      |
+| thirdButtonDisabled      | bool                        | false                                                                         | Disabled status of the middle button                                                      |
+| paintConfirmButtonOrange | bool                        | true                                                                          | Determines whether confirm button should be orange                                        |
+| paintThirdButtonOrange   | bool                        | false                                                                         | Determines whether middle button should be orange                                         |
+| paintCancelButtonOrange  | bool                        | false                                                                         | Determines whether cancel button should be orange                                         |
+| footerContent            | string, node                | undefined                                                                     | Content displayed on the left side of the footer                                          |
+| modalProps               | object                      | {}                                                                            | [Bootstrap Modal props](https://react-bootstrap.github.io/components/modal/#modals-props) |
 
 ### Code example
 ```jsx
