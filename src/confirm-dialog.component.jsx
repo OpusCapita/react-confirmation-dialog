@@ -48,6 +48,7 @@ export default class ConfirmDialog extends React.PureComponent {
       cancelCallback,
       paintCancelButtonOrange,
       footerContent,
+      modalProps,
     } = this.props;
     const isFooterEmpty = !footerContent
       && !confirmCallback
@@ -56,6 +57,7 @@ export default class ConfirmDialog extends React.PureComponent {
     return (
       <ThemeProvider theme={theme}>
         <Modal
+          {...modalProps}
           id={id}
           dialogClassName={className}
           enforceFocus={false}
@@ -129,6 +131,7 @@ ConfirmDialog.propTypes = {
   paintCancelButtonOrange: PropTypes.bool,
   paintThirdButtonOrange: PropTypes.bool,
   footerContent: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  modalProps: PropTypes.shape({}),
 };
 
 ConfirmDialog.defaultProps = {
@@ -150,4 +153,5 @@ ConfirmDialog.defaultProps = {
   cancelCallback: undefined,
   confirmCallback: undefined,
   footerContent: undefined,
+  modalProps: {},
 };
